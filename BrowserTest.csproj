@@ -16,4 +16,8 @@
     <WasmExtraFilesToDeploy Include="main.js" />
     <WasmExtraFilesToDeploy Include="app-support.js" />
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.JSInterop.WebAssembly" Version="7.0.0-preview.6.22330.3" />
+  </ItemGroup>
 </Project>

@@ -5,3 +5,7 @@ App.init = async function () {
     var execute = App.BINDING.bind_static_method("[BrowserTest] Example:Hello");
     console.log(execute("Hello World!"));
 }
+
+window.displayTickerAlert1 = async (symbol, price) => {
+    alert(`${symbol}: $${price}!`);
+};
