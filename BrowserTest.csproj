@@ -15,6 +15,7 @@
     <WasmExtraFilesToDeploy Include="index.html" />
     <WasmExtraFilesToDeploy Include="main.js" />
     <WasmExtraFilesToDeploy Include="app-support.js" />
+    <NativeFileReference Include="lib.bc" />
   </ItemGroup>
 
   <ItemGroup>

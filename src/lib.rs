@@ -1,9 +1,4 @@
-extern "C" {
-    pub fn log_number(number: usize);
-}
-
-pub fn log(number: usize) {
-    unsafe {
-        log_number(number);
-    }
+#[no_mangle]
+pub extern fn rust_method() -> u32 {
+    return 2;
 }
