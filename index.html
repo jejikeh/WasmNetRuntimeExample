@@ -15,8 +15,17 @@
   <div id="app">
     <h1>Doggy</h1>
     <span id="out"></span>
-    <script src="_framework/blazor.webassembly.js"></script>
     <script type='module' src="./main.js"></script>
+    <script>
+      let imports = {
+        env : {
+          log_number: function(number) { console.log("Number from rust : " + number); }
+        }
+      };
+      WebAssembly.instantiateStreaming(fetch('target/wasm32-unknown-unknown/debug/examples/game.wasm'), imports).then(function (result) {
+          result.instance.exports.main();
+      })
+  </script>
   </div>
 </body>
 

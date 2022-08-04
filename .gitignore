@@ -2,3 +2,8 @@ bin
 .vscode
 obj
 node_modules
+
+# Added by cargo
+
+/target
+/Cargo.lock
