@@ -2,6 +2,7 @@ bin
 .vscode
 obj
 node_modules
+/__dotnet_runtime.js
 
 # Added by cargo
 
