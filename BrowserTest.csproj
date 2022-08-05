@@ -12,14 +12,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- wasmbrowser shit -->
     <WasmExtraFilesToDeploy Include="index.html" />
     <WasmExtraFilesToDeploy Include="main.js" />
     <WasmExtraFilesToDeploy Include="app-support.js" />
+
+    <!-- dotnet wasm runtime shit shit -->
+    <WasmExtraFilesToDeploy Include="*.ts" />
+
+    <!-- compiled byte code -->
     <NativeFileReference Include="lib.bc" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="JavaScriptEngineSwitcher.Core" Version="3.19.0" />
+    <PackageReference Include="JavaScriptEngineSwitcher.Jint" Version="3.1.0" />
+    <PackageReference Include="JavaScriptEngineSwitcher.Jurassic" Version="3.19.0" />
+    <PackageReference Include="Jint.CommonJS" Version="1.0.14" />
     <PackageReference Include="Microsoft.JSInterop.WebAssembly" Version="7.0.0-preview.6.22330.3" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.7" />
+    <PackageReference Include="Mono.WebAssembly.Interop" Version="5.0.0-preview.4.20257.10" />
   </ItemGroup>
 </Project>

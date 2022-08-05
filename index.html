@@ -19,12 +19,19 @@
     <script>
       let imports = {
         env : {
-          log_number: function(number) { console.log("Number from rust : " + number); }
+          log_number: function(number) { console.log("Number from rust which run from c# : " + number); }
         }
       };
       WebAssembly.instantiateStreaming(fetch('target/wasm32-unknown-unknown/debug/examples/game.wasm'), imports).then(function (result) {
           result.instance.exports.main();
       })
+  </script>
+  <script type="module">
+    import init, {greet} from "./pkg/browser_test.js";
+    init()
+      .then(() => {
+        greet("WebAssembly")
+      });
   </script>
   </div>
 </body>

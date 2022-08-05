@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 
+using Mono.WebAssembly.Interop;
 // execute this code from JS
 public class Example
 {
@@ -20,14 +21,20 @@ public partial class Program
 {
     // Rust lib interop 
     [DllImport("lib", EntryPoint = "rust_method")]
-    private static extern int Rust_Method();
+    private static extern int RustMethod();
+    static MonoWebAssemblyJSRuntime s = new MonoWebAssemblyJSRuntime();
 
     public static async Task Main(string[] args)
     {
         await Task.Delay(2000);
         //var hostName = GetHostName();
         //Console.WriteLine($"Hello {hostName}, DotNet here!");
-        Console.WriteLine("Hello RUST from c# : " + Rust_Method());
         Console.WriteLine("Welcome to the BrowserTest");
+        Console.WriteLine("Hello RUST from c# : " + RustMethod());
+
+
+        s.Invoke<int>("Hello");
+        // Assembly.InvokeVoid("Hello");
+        // LogNumberRust(3);
     }
 }
