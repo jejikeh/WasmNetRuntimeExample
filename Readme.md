@@ -116,7 +116,7 @@ Console.WriteLine(Rust_Method());
 
 Если по какой либо причине нужно исполнить другой wasm code то это можно сделать просто изменив `index.html`
 
-```html
+```js
 WebAssembly.instantiateStreaming(fetch('target/wasm32-unknown-unknown/debug/examples/path_to_file.wasm'), imports).then(function (result) {
           result.instance.exports.main();
       })
